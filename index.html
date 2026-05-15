@@ -145,6 +145,10 @@
             .container {
                 padding: 1.25rem;
             }
+            .hero-flex {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         .hero h1 {
@@ -203,17 +207,37 @@
             gap: 0.6rem;
             margin-bottom: 0.5rem;
         }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease;
+        }
+        .profile-img:hover {
+            transform: scale(1.02);
+        }
+        .hero-flex {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
     </style>
 </head>
 <body>
 <div class="container">
-    <!-- header / hero -->
+    <!-- header / hero with photo -->
     <div class="card" style="padding: 2rem 2rem 1.8rem 2rem; margin-bottom: 2rem;">
         <div class="hero">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
-                <div>
+            <div class="hero-flex">
+                <img src="martindenzel.jpeg" alt="Denzel Martin profile" class="profile-img">
+                <div style="flex:1">
                     <h1>Denzel Martin</h1>
-                    <div class="badge-accent" style="margin-top: 0.5rem; background: #eef2ff; padding: 0.3rem 1rem;">
+                    <div class="badge-accent" style="margin-top: 0.5rem; background: #eef2ff; padding: 0.3rem 1rem; display: inline-flex;">
                         <i data-lucide="bot" size="16"></i> AI Training & LLM Evaluation Specialist
                     </div>
                     <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
@@ -396,12 +420,12 @@
         </div>
     </div>
 
-    <!-- footer / contact -->
+    <!-- footer / contact with updated links -->
     <div class="footer-note">
         <div style="display: inline-flex; gap: 1.2rem; background: #ffffffd9; padding: 0.6rem 1.5rem; border-radius: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); flex-wrap: wrap; justify-content: center;">
             <span style="display: inline-flex; align-items: center; gap: 0.3rem;"><i data-lucide="mail" size="14"></i> martindenzel@gmail.com</span>
-            <span style="display: inline-flex; align-items: center; gap: 0.3rem;"><i data-lucide="linkedin" size="14"></i> linkedin.com/in/denzel-ai-eval</span>
-            <span style="display: inline-flex; align-items: center; gap: 0.3rem;"><i data-lucide="github" size="14"></i> github.com/denzel-ai-training</span>
+            <a href="https://www.linkedin.com/in/denzel-martin-808b563a7" target="_blank" style="display: inline-flex; align-items: center; gap: 0.3rem; text-decoration: none; color: #5b6e8c; transition: color 0.2s;" onmouseover="this.style.color='#0a66c2'" onmouseout="this.style.color='#5b6e8c'"><i data-lucide="linkedin" size="14"></i> linkedin.com/in/denzel-martin-808b563a7</a>
+            <a href="https://github.com/Denzel64" target="_blank" style="display: inline-flex; align-items: center; gap: 0.3rem; text-decoration: none; color: #5b6e8c; transition: color 0.2s;" onmouseover="this.style.color='#181717'" onmouseout="this.style.color='#5b6e8c'"><i data-lucide="github" size="14"></i> github.com/Denzel64</a>
             <span style="display: inline-flex; align-items: center; gap: 0.3rem;"><i data-lucide="briefcase" size="14"></i> Handshake AI & Outlier candidate</span>
         </div>
         <p style="margin-top: 1.2rem; font-size: 0.8rem; opacity: 0.75;">available for freelance contracts — LLM evaluation, RLHF, data annotation, prompt engineering. 100% remote, flexible hours. Based strictly on proven experience: AI response ranking, dataset QA, chain‑of‑thought reasoning.</p>
