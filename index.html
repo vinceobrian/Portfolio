@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Denzel Martin · AI Training & LLM Evaluation · Freelance Portfolio</title>
+    <!-- Google Fonts + modern reset -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8fafc;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            color: #0f172a;
+            line-height: 1.45;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.98);
+            border-radius: 2rem;
+            box-shadow: 0 15px 35px -12px rgba(0,0,0,0.06), 0 2px 4px -2px rgba(0,0,0,0.02);
+            transition: all 0.25s ease;
+            border: 1px solid rgba(203,213,225,0.5);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.12);
+            border-color: rgba(79,70,229,0.25);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0.9rem;
+            background: #f1f5f9;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #1e293b;
+            transition: all 0.2s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .badge-accent {
+            background: #eef2ff;
+            border-left: 3px solid #4f46e5;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0.9rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .skill-tag {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 0.35rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #1e293b;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .skill-tag:hover {
+            border-color: #4f46e5;
+            background: #f8fafc;
+            transform: scale(0.98);
+            box-shadow: 0 2px 6px rgba(79,70,229,0.1);
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            background: linear-gradient(135deg, #1e293b, #2d3a4b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+            border-left: 4px solid #4f46e5;
+            padding-left: 1rem;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .company {
+            font-weight: 500;
+            color: #4b5563;
+        }
+
+        .date-badge {
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: #eef2ff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 30px;
+            color: #4f46e5;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 780px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 1.25rem;
+            }
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, #1e293b, #2d3e5f);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, #e2e8f0, transparent);
+            margin: 1rem 0;
+        }
+
+        .strength-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.85rem;
+            color: #5b6e8c;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 2rem;
+        }
+        
+        .platform-badge {
+            background: #eef2ff;
+            color: #1e40af;
+            border-radius: 40px;
+            padding: 0.2rem 0.9rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .list-icon {
+            color: #4f46e5;
+            flex-shrink: 0;
+        }
+
+        ul li {
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- header / hero -->
+    <div class="card" style="padding: 2rem 2rem 1.8rem 2rem; margin-bottom: 2rem;">
+        <div class="hero">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <h1>Denzel Martin</h1>
+                    <div class="badge-accent" style="margin-top: 0.5rem; background: #eef2ff; padding: 0.3rem 1rem;">
+                        <i data-lucide="bot" size="16"></i> AI Training & LLM Evaluation Specialist
+                    </div>
+                    <div style="margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span class="platform-badge"><i data-lucide="briefcase" size="14"></i> Handshake AI · Project Stagecraft ready</span>
+                        <span class="platform-badge"><i data-lucide="sparkles" size="14"></i> Outlier AI · Freelance contractor</span>
+                        <span class="platform-badge"><i data-lucide="cpu" size="14"></i> Scale AI ecosystem</span>
+                    </div>
+                </div>
+                <div class="date-badge"><i data-lucide="globe" size="14"></i> open for freelance · 100% remote</div>
+            </div>
+            <div style="margin-top: 1.5rem; background: #f8fafc; padding: 1.2rem 1.5rem; border-radius: 1.5rem; border-left: 4px solid #4f46e5;">
+                <p style="font-size: 1rem; font-weight: 600; color: #0f172a; display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="target" size="16"></i> Professional summary · AI trainer for frontier labs</p>
+                <p style="color: #2c3e50; margin-top: 0.5rem; line-height: 1.5;">AI training and data evaluation specialist experienced in prompt engineering, LLM evaluation, and reinforcement learning feedback. Skilled in Python, reasoning assessment, and dataset quality review used to train large-scale artificial intelligence systems. Ready to contribute to <strong>Handshake AI (Project Stagecraft)</strong> and <strong>Outlier AI</strong> projects: expert data annotation, AI response ranking, and high‑precision model evaluation.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Skills -->
+    <div class="card" style="padding: 1.8rem 2rem; margin-bottom: 2rem;">
+        <div class="section-title"><i data-lucide="cpu" size="24"></i> Core expertise · tailored for freelance data training</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.6rem;">
+            <div>
+                <div style="font-weight: 600; margin-bottom: 0.8rem; color: #0f3b5c; display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="brain" size="16"></i> AI model evaluation & RLHF</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <span class="skill-tag"><i data-lucide="check-circle" size="14"></i> LLM Evaluation</span>
+                    <span class="skill-tag"><i data-lucide="thumbs-up" size="14"></i> RLHF / model alignment</span>
+                    <span class="skill-tag"><i data-lucide="edit" size="14"></i> Prompt engineering & optimization</span>
+                    <span class="skill-tag"><i data-lucide="bar-chart-2" size="14"></i> AI response ranking</span>
+                    <span class="skill-tag"><i data-lucide="scale" size="14"></i> Comparative evaluation</span>
+                    <span class="skill-tag"><i data-lucide="file-check" size="14"></i> Instruction following analysis</span>
+                </div>
+            </div>
+            <div>
+                <div style="font-weight: 600; margin-bottom: 0.8rem; color: #0f3b5c; display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="database" size="16"></i> Data annotation & dataset QA · Handshake AI ready</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <span class="skill-tag"><i data-lucide="tag" size="14"></i> Data labeling & categorization</span>
+                    <span class="skill-tag"><i data-lucide="shield-check" size="14"></i> Dataset quality assurance</span>
+                    <span class="skill-tag"><i data-lucide="layout" size="14"></i> Structured data review</span>
+                    <span class="skill-tag"><i data-lucide="trash-2" size="14"></i> Data validation & cleaning</span>
+                    <span class="skill-tag"><i data-lucide="clipboard-list" size="14"></i> Policy compliance evaluation</span>
+                    <span class="skill-tag"><i data-lucide="user" size="14"></i> Job persona & prompt crafting</span>
+                </div>
+            </div>
+            <div>
+                <div style="font-weight: 600; margin-bottom: 0.8rem; color: #0f3b5c; display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="git-branch" size="16"></i> Advanced reasoning · Outlier requirements</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <span class="skill-tag"><i data-lucide="link" size="14"></i> Chain-of-Thought reasoning</span>
+                    <span class="skill-tag"><i data-lucide="layers" size="14"></i> Multi-step logical analysis</span>
+                    <span class="skill-tag"><i data-lucide="award" size="14"></i> AI output scoring & critique</span>
+                    <span class="skill-tag"><i data-lucide="check-square" size="14"></i> Fact verification / knowledge checking</span>
+                    <span class="skill-tag"><i data-lucide="users" size="14"></i> User mindset & natural data generation</span>
+                </div>
+            </div>
+            <div>
+                <div style="font-weight: 600; margin-bottom: 0.8rem; color: #0f3b5c; display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="code" size="16"></i> Programming & technical tools</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <span class="skill-tag"><i data-lucide="python" size="14"></i> Python</span>
+                    <span class="skill-tag"><i data-lucide="book-open" size="14"></i> Jupyter Notebook</span>
+                    <span class="skill-tag"><i data-lucide="github" size="14"></i> Git/GitHub</span>
+                    <span class="skill-tag"><i data-lucide="file-json" size="14"></i> JSON / SQL</span>
+                    <span class="skill-tag"><i data-lucide="cloud" size="14"></i> Google Colab</span>
+                    <span class="skill-tag"><i data-lucide="panel-top" size="14"></i> AI annotation platforms</span>
+                </div>
+            </div>
+            <div>
+                <div style="font-weight: 600; margin-bottom: 0.8rem; color: #0f3b5c; display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="languages" size="16"></i> Language & content · editorial precision</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <span class="skill-tag"><i data-lucide="flag" size="14"></i> English content review</span>
+                    <span class="skill-tag"><i data-lucide="mic" size="14"></i> Linguistic quality evaluation</span>
+                    <span class="skill-tag"><i data-lucide="shield" size="14"></i> Content moderation & safety</span>
+                    <span class="skill-tag"><i data-lucide="file-text" size="14"></i> Technical writing style</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Professional experience & projects -->
+    <div class="grid-2col" style="margin-bottom: 2rem;">
+        <div class="card" style="padding: 1.8rem 1.8rem;">
+            <div class="section-title" style="margin-bottom: 1.5rem;"><i data-lucide="briefcase" size="22"></i> Freelance & contract experience</div>
+            <div style="margin-bottom: 2rem;">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+                    <div class="job-title"><i data-lucide="graduation-cap" size="18"></i> AI Training & LLM Evaluation Specialist</div>
+                    <div class="date-badge"><i data-lucide="calendar" size="12"></i> 2023 – present</div>
+                </div>
+                <div class="company" style="margin-bottom: 0.75rem;">Independent AI Projects · remote (aligned with Handshake AI & Outlier workflows)</div>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li><i data-lucide="chevron-right" size="14" class="list-icon"></i> Evaluated LLM outputs for accuracy, reasoning depth & policy alignment – core skill for Handshake AI evaluation tasks.</li>
+                    <li><i data-lucide="chevron-right" size="14" class="list-icon"></i> Ranked AI responses using structured frameworks and provided RLHF feedback to improve model alignment — directly applicable to Outlier AI response ranking workflows.</li>
+                    <li><i data-lucide="chevron-right" size="14" class="list-icon"></i> Designed reasoning prompts to test instruction adherence, problem-solving ability & chain-of-thought evaluation (Outlier-style complex prompt development).</li>
+                    <li><i data-lucide="chevron-right" size="14" class="list-icon"></i> Conducted dataset validation + RLHF feedback for model alignment, ensuring high-quality ML training inputs for large-scale AI systems.</li>
+                </ul>
+            </div>
+            <hr>
+            <div style="margin-top: 0.8rem;">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+                    <div class="job-title"><i data-lucide="bar-chart-3" size="18"></i> Data Annotation & AI Model Evaluation Analyst</div>
+                    <div class="date-badge"><i data-lucide="calendar" size="12"></i> 2021 – 2023</div>
+                </div>
+                <div class="company" style="margin-bottom: 0.75rem;">Tech AI Solutions · Austin, Texas</div>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li><i data-lucide="chevron-right" size="14" class="list-icon"></i> Annotated & categorized datasets for ML model training (NLP models) – relevant for Handshake AI dataset annotation projects.</li>
+                    <li><i data-lucide="chevron-right" size="14" class="list-icon"></i> QA reviews on AI-generated responses + content moderation for safety compliance; documented annotation guidelines to ensure cross‑dataset consistency.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div class="card" style="padding: 1.8rem 1.8rem;">
+                <div class="section-title" style="margin-bottom: 1rem;"><i data-lucide="folder-code" size="22"></i> Project portfolio · built for Handshake AI & Outlier</div>
+                <div style="margin-bottom: 1.5rem;">
+                    <div class="job-title" style="margin-bottom: 0.25rem;"><i data-lucide="brain" size="18"></i> LLM Reasoning Evaluation · Handshake AI ready</div>
+                    <p style="margin-top: 0.4rem; color: #334155;">Structured analysis of AI responses to complex reasoning prompts → ranked multiple model outputs based on factual accuracy & reasoning quality. Applied Job Persona methodology (similar to Handshake AI’s Project Stagecraft guidelines: create realistic prompts with domain context). Improved dataset reliability through detailed annotation feedback and multi‑stage review. Directly transferable to Handshake AI evaluation and Outlier AI reasoning tasks.</p>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <div class="job-title" style="margin-bottom: 0.25rem;"><i data-lucide="edit-3" size="18"></i> Prompt Engineering · Outlier-style complex prompts</div>
+                    <p style="margin-top: 0.4rem; color: #334155;">Designed advanced prompts to test AI instruction-following behavior, evaluated model outputs to improve response consistency, clarity and alignment with safety policies. Built Chain-of-Thought evaluations to critique AI reasoning. This matches Outlier AI’s requirement: “ability to develop complex, professional-level prompts and evaluate nuanced AI reasoning.”</p>
+                </div>
+                <div>
+                    <div class="job-title" style="margin-bottom: 0.25rem;"><i data-lucide="thumbs-up" size="18"></i> Reinforcement Learning from Human Feedback (RLHF)</div>
+                    <p style="margin-top: 0.4rem; color: #334155;">Provided structured preference rankings and detailed justifications for model outputs. Used RLHF to improve model alignment across safety, helpfulness, and factual grounding. Core competency for both Handshake AI and Outlier AI training roles.</p>
+                </div>
+            </div>
+
+            <div class="card" style="padding: 1.8rem 1.8rem;">
+                <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between;">
+                    <div>
+                        <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.7rem; color:#0f172a; display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="school" size="18"></i> Education</div>
+                        <div><strong>B.S. in Computer Science</strong> (Applied Science)</div>
+                        <div style="color: #4b5563;">Lyon College</div>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.7rem; color:#0f172a; display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="wrench" size="18"></i> Technical stack & platforms</div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                            <span class="skill-tag"><i data-lucide="python" size="12"></i> Python</span>
+                            <span class="skill-tag"><i data-lucide="database" size="12"></i> SQL</span>
+                            <span class="skill-tag"><i data-lucide="file-json" size="12"></i> JSON processing</span>
+                            <span class="skill-tag"><i data-lucide="book-open" size="12"></i> Jupyter / Colab</span>
+                            <span class="skill-tag"><i data-lucide="github" size="12"></i> GitHub</span>
+                            <span class="skill-tag"><i data-lucide="layout" size="12"></i> AI annotation platforms</span>
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin: 1.2rem 0 0.8rem 0;">
+                <div style="background: #f1f5f9; border-radius: 1rem; padding: 0.8rem 1rem;">
+                    <div style="font-weight: 600; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.4rem;"><i data-lucide="target" size="16"></i> Targeted freelance roles</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.3rem;">
+                        <span class="badge-accent"><i data-lucide="briefcase" size="14"></i> Handshake AI — AI Trainer / Frontier Labs</span>
+                        <span class="badge-accent"><i data-lucide="sparkles" size="14"></i> Outlier AI — AI Trainer / Content Editor</span>
+                        <span class="badge-accent"><i data-lucide="cpu" size="14"></i> Project Stagecraft · OpenAI partner</span>
+                        <span class="badge-accent"><i data-lucide="database" size="14"></i> Scale AI ecosystem · data annotation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional strengths -->
+    <div class="card" style="padding: 1.5rem 2rem; margin-bottom: 1rem;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+            <div class="section-title" style="font-size: 1.3rem; border-left: none; padding-left: 0;"><i data-lucide="zap" size="22"></i> Freelance strengths · remote ready</div>
+            <div class="strength-list">
+                <span class="badge"><i data-lucide="bar-chart" size="14"></i> high‑precision data review</span>
+                <span class="badge"><i data-lucide="search" size="14"></i> analytical problem solving</span>
+                <span class="badge"><i data-lucide="message-square" size="14"></i> strong written communication</span>
+                <span class="badge"><i data-lucide="git-branch" size="14"></i> cross‑domain reasoning</span>
+                <span class="badge"><i data-lucide="shield" size="14"></i> AI safety awareness</span>
+                <span class="badge"><i data-lucide="clock" size="14"></i> flexible project‑based work</span>
+            </div>
+        </div>
+        <hr style="margin: 1rem 0 0.5rem 0;">
+        <div style="margin-top: 0.8rem; display: flex; justify-content: flex-start; gap: 1rem; flex-wrap: wrap;">
+            <div class="badge-accent"><i data-lucide="thumbs-up" size="14"></i> RLHF · model alignment specialist</div>
+            <div class="badge-accent"><i data-lucide="edit" size="14"></i> prompt optimization expert (Outlier ready)</div>
+            <div class="badge-accent"><i data-lucide="database" size="14"></i> dataset quality assurance & annotation</div>
+            <div class="badge-accent"><i data-lucide="brain" size="14"></i> LLM reasoning evaluation (Handshake AI)</div>
+        </div>
+        <div style="margin-top: 1rem; font-size: 0.85rem; color: #2563eb; background: #eef2ff; padding: 0.6rem 1rem; border-radius: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i data-lucide="info" size="16"></i> <strong>Why Denzel for Handshake AI / Outlier AI:</strong> direct experience in LLM evaluation, prompt engineering, RLHF, and structured data annotation. Skilled in Python, Jupyter, SQL, JSON. Trained to follow detailed project guidelines, maintain consistency at scale, and deliver expert‑level AI training data. Fully remote, freelance/1099 ready.
+        </div>
+    </div>
+
+    <!-- footer / contact -->
+    <div class="footer-note">
+        <div style="display: inline-flex; gap: 1.2rem; background: #ffffffd9; padding: 0.6rem 1.5rem; border-radius: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); flex-wrap: wrap; justify-content: center;">
+            <span style="display: inline-flex; align-items: center; gap: 0.3rem;"><i data-lucide="mail" size="14"></i> martindenzel@gmail.com</span>
+            <span style="display: inline-flex; align-items: center; gap: 0.3rem;"><i data-lucide="linkedin" size="14"></i> linkedin.com/in/denzel-ai-eval</span>
+            <span style="display: inline-flex; align-items: center; gap: 0.3rem;"><i data-lucide="github" size="14"></i> github.com/denzel-ai-training</span>
+            <span style="display: inline-flex; align-items: center; gap: 0.3rem;"><i data-lucide="briefcase" size="14"></i> Handshake AI & Outlier candidate</span>
+        </div>
+        <p style="margin-top: 1.2rem; font-size: 0.8rem; opacity: 0.75;">available for freelance contracts — LLM evaluation, RLHF, data annotation, prompt engineering. 100% remote, flexible hours. Based strictly on proven experience: AI response ranking, dataset QA, chain‑of‑thought reasoning.</p>
+    </div>
+</div>
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>
