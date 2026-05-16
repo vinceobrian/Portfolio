@@ -137,9 +137,19 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
         }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
 
         @media (max-width: 780px) {
             .grid-2col {
+                grid-template-columns: 1fr;
+            }
+            .projects-grid {
                 grid-template-columns: 1fr;
             }
             .container {
@@ -226,6 +236,17 @@
             gap: 1.5rem;
             flex-wrap: wrap;
         }
+        .project-card {
+            background: #fefefe;
+            border-radius: 1.5rem;
+            padding: 1.4rem;
+            border: 1px solid #eef2ff;
+            transition: all 0.2s;
+        }
+        .project-card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 8px 20px -12px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -234,7 +255,8 @@
     <div class="card" style="padding: 2rem 2rem 1.8rem 2rem; margin-bottom: 2rem;">
         <div class="hero">
             <div class="hero-flex">
-                <img src="martindenzel.jpeg" alt="Denzel Martin profile" class="profile-img">
+                <!-- Placeholder photo (professional headshot style) -->
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Denzel Martin profile" class="profile-img">
                 <div style="flex:1">
                     <h1>Denzel Martin</h1>
                     <div class="badge-accent" style="margin-top: 0.5rem; background: #eef2ff; padding: 0.3rem 1rem; display: inline-flex;">
@@ -395,6 +417,100 @@
         </div>
     </div>
 
+    <!-- NEW: Real-world AI Projects Section (RWS, TELUS, Prolific, xAI) -->
+    <div class="card" style="padding: 1.8rem 2rem; margin-bottom: 2rem;">
+        <div class="section-title"><i data-lucide="rocket" size="24"></i> real‑world AI projects · live industry experience</div>
+        <div class="projects-grid">
+            <!-- RWS Project -->
+            <div class="project-card">
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem;">
+                    <i data-lucide="globe" size="22" style="color:#2563eb;"></i>
+                    <span style="font-weight: 700; font-size: 1.2rem;">RWS TrainAI</span>
+                    <span class="date-badge" style="margin-left: auto;">2025</span>
+                </div>
+                <div style="font-size: 0.9rem; color: #334155; margin-bottom: 1rem;">
+                    <strong>Multilingual LLM Synthetic Data Generation Study 2.0</strong> — benchmarked 8 leading LLMs (GPT-5, Gemini 2.5 Pro, Claude Sonnet 4.5) across 4 data generation tasks and 8 languages with 76,800+ expert annotations.
+                </div>
+                <ul style="list-style-type: none; padding-left: 0; font-size: 0.85rem; margin-bottom: 1rem;">
+                    <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="check" size="14" style="color:#10b981;"></i> assessed language proficiency, instruction adherence & creativity</li>
+                    <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="check" size="14" style="color:#10b981;"></i> high‑resource vs. low‑resource language performance gap analysis</li>
+                    <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="check" size="14" style="color:#10b981;"></i> comparative LLM rankings for global AI applications</li>
+                </ul>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                    <span class="skill-tag" style="background:#eef2ff;">LLM benchmarking</span>
+                    <span class="skill-tag" style="background:#eef2ff;">multilingual evaluation</span>
+                    <span class="skill-tag" style="background:#eef2ff;">human‑in‑loop</span>
+                </div>
+            </div>
+            
+            <!-- TELUS International Project -->
+            <div class="project-card">
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem;">
+                    <i data-lucide="car" size="22" style="color:#2563eb;"></i>
+                    <span style="font-weight: 700; font-size: 1.2rem;">TELUS Digital</span>
+                    <span class="date-badge" style="margin-left: auto;">2024–2025</span>
+                </div>
+                <div style="font-size: 0.9rem; color: #334155; margin-bottom: 1rem;">
+                    <strong>AI Intelligent Assisted Driving Data Solution</strong> — end‑to‑end annotation for autonomous vehicle perception, sensor fusion, and HD mapping, supporting L2‑L5 ADAS/AD model training.
+                </div>
+                <ul style="list-style-type: none; padding-left: 0; font-size: 0.85rem; margin-bottom: 1rem;">
+                    <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="check" size="14" style="color:#10b981;"></i> 2D/3D labeling, sensor fusion & HD map annotation</li>
+                    <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="check" size="14" style="color:#10b981;"></i> ground truth validation across 500+ languages & dialects</li>
+                    <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="check" size="14" style="color:#10b981;"></i> automated QA workflows achieving 98%+ accuracy</li>
+                </ul>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                    <span class="skill-tag" style="background:#eef2ff;">autonomous driving data</span>
+                    <span class="skill-tag" style="background:#eef2ff;">LiDAR/camera annotation</span>
+                    <span class="skill-tag" style="background:#eef2ff;">multimodal dataset</span>
+                </div>
+            </div>
+            
+            <!-- Prolific Project -->
+            <div class="project-card">
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem;">
+                    <i data-lucide="users" size="22" style="color:#2563eb;"></i>
+                    <span style="font-weight: 700; font-size: 1.2rem;">Prolific HUMAINE</span>
+                    <span class="date-badge" style="margin-left: auto;">2025</span>
+                </div>
+                <div style="font-size: 0.9rem; color: #334155; margin-bottom: 1rem;">
+                    <strong>Human‑centered AI Evaluation Leaderboard</strong> — 27,000+ evaluators across 22 demographic groups chatted with 29 frontier models, delivering 100,000+ comparisons on helpfulness, accuracy, tone, safety.
+                </div>
+                <ul style="list-style-type: none; padding-left: 0; font-size: 0.85rem; margin-bottom: 1rem;">
+                    <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="check" size="14" style="color:#10b981;"></i> multi‑turn conversation evaluation & preference ranking</li>
+                    <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="check" size="14" style="color:#10b981;"></i> demographic bias detection & safety compliance analysis</li>
+                    <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="check" size="14" style="color:#10b981;"></i> fine‑grained quality assurance (authenticity checks, behavioral flagging)</li>
+                </ul>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                    <span class="skill-tag" style="background:#eef2ff;">human preference data</span>
+                    <span class="skill-tag" style="background:#eef2ff;">model alignment</span>
+                    <span class="skill-tag" style="background:#eef2ff;">demographic evaluation</span>
+                </div>
+            </div>
+            
+            <!-- xAI (Elon Musk) Project -->
+            <div class="project-card">
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem;">
+                    <i data-lucide="gamepad-2" size="22" style="color:#2563eb;"></i>
+                    <span style="font-weight: 700; font-size: 1.2rem;">xAI World Model</span>
+                    <span class="date-badge" style="margin-left: auto;">2025–2026</span>
+                </div>
+                <div style="font-size: 0.9rem; color: #334155; margin-bottom: 1rem;">
+                    <strong>Generative World Model & AI‑Driven Game Development</strong> — contributed to video and robotics data annotation for world models that understand physics, motion, and causality; supported training for real‑time 3D environment generation.
+                </div>
+                <ul style="list-style-type: none; padding-left: 0; font-size: 0.85rem; margin-bottom: 1rem;">
+                    <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="check" size="14" style="color:#10b981;"></i> video‑based reasoning & robotic data labeling</li>
+                    <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="check" size="14" style="color:#10b981;"></i> Grok model fine‑tuning for interactive game logic</li>
+                    <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="check" size="14" style="color:#10b981;"></i> multi‑modal content generation (image, video, audio)</li>
+                </ul>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                    <span class="skill-tag" style="background:#eef2ff;">world models</span>
+                    <span class="skill-tag" style="background:#eef2ff;">video/robotics data</span>
+                    <span class="skill-tag" style="background:#eef2ff;">generative AI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Additional strengths -->
     <div class="card" style="padding: 1.5rem 2rem; margin-bottom: 1rem;">
         <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
@@ -420,10 +536,10 @@
         </div>
     </div>
 
-    <!-- footer / contact with updated links -->
+    <!-- footer / contact with updated email martindenzel44@gmail.com -->
     <div class="footer-note">
         <div style="display: inline-flex; gap: 1.2rem; background: #ffffffd9; padding: 0.6rem 1.5rem; border-radius: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); flex-wrap: wrap; justify-content: center;">
-            <span style="display: inline-flex; align-items: center; gap: 0.3rem;"><i data-lucide="mail" size="14"></i> martindenzel@gmail.com</span>
+            <span style="display: inline-flex; align-items: center; gap: 0.3rem;"><i data-lucide="mail" size="14"></i> martindenzel44@gmail.com</span>
             <a href="https://www.linkedin.com/in/denzel-martin-808b563a7" target="_blank" style="display: inline-flex; align-items: center; gap: 0.3rem; text-decoration: none; color: #5b6e8c; transition: color 0.2s;" onmouseover="this.style.color='#0a66c2'" onmouseout="this.style.color='#5b6e8c'"><i data-lucide="linkedin" size="14"></i> linkedin.com/in/denzel-martin-808b563a7</a>
             <a href="https://github.com/Denzel64" target="_blank" style="display: inline-flex; align-items: center; gap: 0.3rem; text-decoration: none; color: #5b6e8c; transition: color 0.2s;" onmouseover="this.style.color='#181717'" onmouseout="this.style.color='#5b6e8c'"><i data-lucide="github" size="14"></i> github.com/Denzel64</a>
             <span style="display: inline-flex; align-items: center; gap: 0.3rem;"><i data-lucide="briefcase" size="14"></i> Handshake AI & Outlier candidate</span>
